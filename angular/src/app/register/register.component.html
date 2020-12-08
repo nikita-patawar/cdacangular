@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height:100%;
+  font-family:"Inconsolata" , sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../assets/Images/cafe.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+  <div class="w3-main" style="margin-left: 300px;margin-right: 300px;">
+    <h2>User Registration</h2>
+    <div class="card my-5">
+
+<div class="card-body">
+
+  <form  (ngSubmit)="userForm.form.valid && onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        
+          <label for="name">name</label><br>
+          <input id="name" type="text" class="form-control" name="name" [(ngModel)]="user.name" class="validate" 
+          #name="ngModel"
+          required
+          minlength="10"
+          [ngClass]="{'is-invalid' : userForm.submitted && name.invalid }">
+          
+        <div class="invalid-input" *ngIf="userForm.submitted && name.invalid">
+            <div *ngIf="name.errors?.required">
+              *name is required
+            </div>
+            <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label><br>
+          <input id="password" type="password" class="form-control" name="password" [(ngModel)]="user.password" class="validate" 
+          #password="ngModel"
+          required
+          [ngClass]="{'is-invalid' : userForm.submitted && password.invalid }">
+          
+        
+        <div class="invalid-input" *ngIf="userForm.submitted && password.invalid">
+          <div *ngIf="password.errors?.required">
+            *password is required
+          </div>
+          <br>
+        </div>
+      
+      </div>
+     
+      
+      <div class="form-group">
+        <label for="mobno">mobno</label><br>
+          <input id="mobno" type="text" class="form-control" name="mobno" [(ngModel)]="user.mobno" maxlength="10"  class="validate" 
+          minlength="10"
+          required
+          #mobno="ngModel"
+          [ngClass]="{'is-invalid' : userForm.submitted && mobno.invalid }"
+          >
+        
+        <div class="invalid-input" *ngIf="userForm.submitted && mobno.invalid">
+          <div *ngIf="mobno.errors?.required">
+            *mobno is required.
+          </div>
+          <div *ngIf="mobno.errors?.minlength ">
+            *minimun 10 characters
+          </div>
+          <div *ngIf="mobno.errors?.maxlength ">
+            *maximum 10 characters
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label><br>
+          <input id="email" placeholder="email" type="email" class="form-control" [(ngModel)]="user.email" name="email" class="validate" />
+          
+        
+      </div>
+      <div class="form-group">
+        <label for="role">role</label><br>
+        <select name="role" [(ngModel)]="user.role" class="form-control"
+        id="role" placeholder="role"
+        required #imageurl="ngModel">
+       
+          <option value=1>User</option>
+        
+        </select>
+        
+      </div> 
+      <button type="submit" class="btn btn-info" (click)="registerNow()" >Submit</button>
+    </form>
+
+</div>
+ </div>
+  </div>
+</body>
+</html>
+

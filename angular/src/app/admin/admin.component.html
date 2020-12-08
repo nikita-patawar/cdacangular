@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+    <body>
+        <div class="col-md-6">
+            <h2> Workspace Details</h2>
+            
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Workspace Name</th>
+                <th>Email</th>
+                <th>Area</th>
+                <th>Capacity</th>
+                <th>Contact number</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+              <tbody>
+              <tr *ngFor="let space of workspace">
+                <td>{{space.wname}}</td>
+                <td>{{space.email}}</td>
+                <td>{{space.area}}</td>
+                <td>{{space.capacity}}</td>
+                <td>{{space.mobno}}</td>
+                <td><button type="button" class="btn btn-success">Add</button></td>
+                <td><button type="button" class="btn btn-success">Decline</button></td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

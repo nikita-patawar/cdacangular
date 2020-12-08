@@ -1,0 +1,103 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+</style>
+<body class="w3-light-grey">
+
+
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;">
+
+
+  <!-- Newsletter -->
+  <div class="w3-container">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card w3-hover-opacity-off">
+      <h2>Welcome to {{workspace[0].wname}}</h2>
+      <marquee><p>CREATE YOUR SUCCESS STORIES HERE</p></marquee>
+      <P>Area:  {{workspace[0].area}}</P>
+      <P>Adress:  {{workspace[0].address}}</P>
+      
+      <P>Total Available Seats:  {{workspace[0].capacity}}</P>
+
+    </div>
+  </div>
+  
+  <!-- Contact -->
+  <div class="w3-container">
+    <h2>Contact</h2>
+   
+   
+    <i class="fa fa-phone" style="width:30px"></i> Phone: {{workspace[0].mobno}}<br>
+    <i class="fa fa-envelope" style="width:30px"> </i> Email: {{workspace[0].email}}<br>
+
+    <p>Let us book your WORKPLACE</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="No of Seats require" required name="seats" [(ngModel)]="book.seats" required #type="ngModel"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Date" required name="date" [(ngModel)]="book.date" required #type="ngModel"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="time" required name="time" [(ngModel)]="book.time" required #type="ngModel"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="No of hrs" required name="hrs" [(ngModel)]="book.hrs" required #type="ngModel"></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="submit" (click)="bookNow()">BOOK</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
+  <h1 class="w3-jumbo"><b>Facilities</b></h1>
+  
+  <div class="w3-row" style="margin-top:64px">
+    <div class="w3-col s3">
+      <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
+      <p>Fast</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-taxi w3-text-red w3-jumbo"></i>
+      <p>Parking</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-cutlery w3-text-yellow w3-jumbo"></i>
+      <p>Food</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-battery-full w3-text-green w3-jumbo"></i>
+      <p>Power</p>
+    </div>
+  </div>
+
+  
+  
+  <div class="w3-row" style="margin-top:64px">
+    <div class="w3-col s3">
+      <i class="fa fa-user w3-text-sand w3-jumbo"></i>
+      <p>Safe</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-print w3-text-orange w3-jumbo"></i>
+      <p>Printer</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
+      <p>Connected</p>
+    </div>
+   
+  </div>
+</div>
+
+
+</body>
+</html>

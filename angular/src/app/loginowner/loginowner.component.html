@@ -1,0 +1,23 @@
+
+<div class="container" >
+    <form (ngSubmit)="onSubmit(f)" #f=ngForm style="width: 50%;">
+        <legend style="font-size: 40px;font-weight: bold; text-align: center; color: black;">Log In</legend>
+       
+
+        <div class="form-group" style="background-image: url()">
+            <label style="font-size: 15px;color: midnightblue" for="email">Email</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <input ngModel style="border:none; border-bottom: 2px solid rebeccapurple" type="text" class="form-control" name="email" id="email" placeholder="Enter Email" required #email = "ngModel" >
+        </div>
+    <br>
+        <div class="form-group">
+            <label style="font-size: 15px;color: midnightblue" for="password">Password</label>&nbsp; &nbsp; &nbsp;
+            <input ngModel style="border: none; border-bottom: 2px solid rebeccapurple" type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required #password = "ngModel">
+        </div>
+       
+<button type="submit"  class="btn btn-primary" style="margin-bottom: 14px;" data-toggle="modal" data-target="#myModal">Login</button>
+
+    </form>
+</div> 
+
+
+
